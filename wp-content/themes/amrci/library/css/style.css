@@ -1,0 +1,16 @@
+body{
+    background-color: #191856;
+}
+.container{
+    background-color: #fff;
+}
+.navbar-default{
+    background-color: #d10010;
+    border-bottom: none;
+}
+.navbar-default .navbar-nav>li>a{
+    color: #fff;
+}
+.navbar-collapse{
+    background-color: #d10010;
+}

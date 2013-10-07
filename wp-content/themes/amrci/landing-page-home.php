@@ -7,9 +7,6 @@ Template Name: Landing Home Page
 <?php get_header(); ?>
       
 <style>
-body{
-  padding-top: 60px;
-}
 </style>
       <div class="row">
         <div class="col-lg-12">

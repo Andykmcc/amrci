@@ -6,7 +6,7 @@
 <!--[if IE 8 ]>    <html <?php language_attributes(); ?> class="no-js ie8"> <![endif]-->
 <!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
   
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
@@ -24,7 +24,7 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     
-      <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+    <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
     <!-- wordpress head functions -->
     <?php wp_head(); ?>
@@ -35,12 +35,12 @@
 
     <!-- typeahead plugin - if top nav search bar enabled -->
     <?php require_once('library/typeahead.php'); ?>
-<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">  
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">  
 
-  </head>
+</head>
   
-  <body <?php body_class(); ?>>
-      <!--facebook-->
+<body <?php body_class(); ?>>
+    <!--facebook-->
     <div id="fb-root"></div>
     <script>
       (function(d, s, id) {
@@ -54,47 +54,35 @@
     </script>
     <!--end facebook-->  
     <header role="banner">
-    
-    
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-          
-<div class="container">
-          <div class="navbar-header">
-          
-                              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" id="logo" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>">
-                                
-                  <?php if(of_get_option('navbar-branding_logo','')!='') { ?>
-                    <img src="<?php echo of_get_option('navbar-branding_logo'); ?>" alt="<?php echo get_bloginfo('description'); ?>">
-                    <?php }
-                    if(of_get_option('site_name','1')) bloginfo('name'); ?></a>
-                
-
+        <div class="container">
+            <div class="row">
+                <div class='col-xs-12 col-sm-3 col-md-3'>
+                    <a class="navbar-brand" id="logo" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>">
+                        <?php if(of_get_option('navbar-branding_logo','')!='') { ?>
+                            <img src="<?php echo of_get_option('navbar-branding_logo'); ?>" alt="<?php echo get_bloginfo('description'); ?>">
+                        <?php }
+                            if(of_get_option('site_name','1')) bloginfo('name'); ?>
+                    </a>
                 </div>
-                <div class="navbar-collapse collapse">
-                  <?php bones_main_nav(); // Adjust using Menus in Wordpress Admin ?>
-                
-                
-            
-              <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 pull-right">
-              <?php if(of_get_option('search_bar', '1')) {?>
-              <form class="navbar-form navbar-right" role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
-                            <div class="input-group">
-                <input name="s" id="s" type="text" class="form-control" autocomplete="off" placeholder="<?php _e('Search','bonestheme'); ?>" data-provide="typeahead" data-items="4" data-source='<?php echo $typeahead_data; ?>'>
-                                <span class="input-group-btn">
-                                <button type="submit" class="btn btn-default">Submit</button></span>
-</div>
-              </form>
-              <?php } ?>
-              </div>
-          
-</div>
-        </nav> <!-- end .navbar -->
-
-    
+                <div class='hidden-xs col-sm-9 col-md-9'>
+                    <img src="http://placekitten.com/700/262" class="img-responsive">
+                </div>
+            </div>
+            <div class='row'>
+                <nav class="navbar navbar-default navbar-static-top" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">                      <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <div class="col-xs-12 col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3 col-lg-9 col-lg-offset-3">
+                            <?php bones_main_nav(); // Adjust using Menus in Wordpress Admin ?>
+                        </div>
+                    </div>
+                </nav> <!-- end .navbar -->
+            </div>
+        </div>
     </header> <!-- end header -->
-    
     <div class="container">
