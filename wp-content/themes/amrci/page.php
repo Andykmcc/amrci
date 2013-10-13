@@ -2,7 +2,7 @@
 			
 			<div id="content" class="clearfix row">
 			
-				<div id="main" class="col-md-8 col-sm-8 col-lg-8 clearfix" role="main">
+				<div id="main" class="col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3 col-lg-9 col-lg-offset-3 clearfix" role="main">
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
@@ -26,9 +26,7 @@
 						</footer> <!-- end article footer -->
 					
 					</article> <!-- end article -->
-					
-					<?php comments_template('',true); ?>
-					
+
 					<?php endwhile; ?>		
 					
 					<?php else : ?>
@@ -47,8 +45,6 @@
 					<?php endif; ?>
 			
 				</div> <!-- end #main -->
-    
-				<?php get_sidebar(); // sidebar 1 ?>
     
 			</div> <!-- end #content -->
 

@@ -8,8 +8,8 @@ Template Name: Homepage
 			
 			<div id="content" class="clearfix row">
 			
-				<div id="main" class="col-md-12 clearfix" role="main">
-
+				<div id="main" class="col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3 col-lg-9 col-lg-offset-3 clearfix" role="main">
+                
 					<?php
 
 					$use_carousel = of_get_option('showhidden_slideroptions');
