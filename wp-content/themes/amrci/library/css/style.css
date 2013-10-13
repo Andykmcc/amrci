@@ -17,3 +17,18 @@ h1{
 .navbar-collapse{
     background-color: #d10010;
 }
+.properties_pagination{
+    display: none;
+}
+.overview-item{
+    margin-bottom: 20px;
+}
+.overview-item h4 a{
+    color: #000;
+}
+.overview-item h4 a:hover{
+    color: #000;
+}
+.overview-tagline{
+    margin: 15px 0px;
+}

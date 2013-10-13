@@ -84,9 +84,6 @@ jQuery(document).ready(function($) {
 	  })
 	});
 	
-				
 	$('.alert-message').alert();
-	
-	$('.dropdown-toggle').dropdown();
  
 }); /* end of as page load scripts */
