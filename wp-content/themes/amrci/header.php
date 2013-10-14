@@ -65,7 +65,9 @@
                     </a>
                 </div>
                 <div class='hidden-xs col-sm-9 col-md-9'>
-                    <img src="http://placekitten.com/700/262" class="img-responsive">
+                    
+                    <img src="<?php bloginfo('template_directory'); ?>/images/header.png" class="img-responsive">
+                    
                 </div>
             </div>
             <div class='row'>

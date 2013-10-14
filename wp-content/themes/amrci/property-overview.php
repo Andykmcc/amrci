@@ -35,7 +35,6 @@
   <div class="<?php wpp_css('property_overview::all_properties', "all-properties"); ?>">
   <?php foreach ( returned_properties('load_gallery=false') as $property) {  ?>
 
-
     <div class='row overview-item'>
         <div class='col-md-12'>
             <h4>

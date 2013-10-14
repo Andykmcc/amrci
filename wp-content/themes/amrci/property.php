@@ -25,7 +25,7 @@
 <?php get_header(); ?>
 <?php the_post(); ?>
 
-    <script type="text/javascript">
+<script type="text/javascript">
     var map;
     var marker;
     var infowindow;
@@ -83,77 +83,65 @@
 
     <?php endif; ?>
   }
+</script>
 
-  </script>
+<div class='row'>
+    <div class='col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3 col-lg-9 col-lg-offset-3'>
 
+        <div id="container" class="<?php wpp_css('property::container', array((!empty($post->property_type) ? $post->property_type . "_container" : ""))); ?>">
+            <div id="content" class="<?php wpp_css('property::content', "property_content"); ?>" role="main">
+                <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                    <div class="<?php wpp_css('property::title', "building_title_wrapper"); ?>">
+                        <h1 class="property-title entry-title"><?php the_title(); ?></h1>
+                        <h3 class="entry-subtitle"><?php the_tagline(); ?></h3>
+                    </div>
+                    <?php 
+                    if ( has_post_thumbnail() ) { ?>
+                    <p>
+                        <?php the_post_thumbnail('full'); ?>
+                    </p>
+                    <?php 
+                    } 
+                    ?>
+                    
+                    <div class="<?php wpp_css('property::entry_content', "entry-content"); ?>">
+                        <div class="<?php wpp_css('property::the_content', "wpp_the_content"); ?>"><?php @the_content(); ?></div>
 
-  <div id="container" class="<?php wpp_css('property::container', array((!empty($post->property_type) ? $post->property_type . "_container" : ""))); ?>">
-    <div id="content" class="<?php wpp_css('property::content', "property_content"); ?>" role="main">
-      <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                        <?php if(!empty($wp_properties['taxonomies'])) foreach($wp_properties['taxonomies'] as $tax_slug => $tax_data): ?>
+                            <?php if(get_features("type={$tax_slug}&format=count")):  ?>
+                                <div class="<?php echo $tax_slug; ?>_list">
+                                    <h2><?php echo $tax_data['label']; ?></h2>
+                                    <ul class="clearfix">
+                                        <?php get_features("type={$tax_slug}&format=list&links=true"); ?>
+                                    </ul>
+                                </div>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
 
-
-      <div class="<?php wpp_css('property::title', "building_title_wrapper"); ?>">
-        <h1 class="property-title entry-title"><?php the_title(); ?></h1>
-        <h3 class="entry-subtitle"><?php the_tagline(); ?></h3>
-      </div>
-
-
-      <div class="<?php wpp_css('property::entry_content', "entry-content"); ?>">
-        <div class="<?php wpp_css('property::the_content', "wpp_the_content"); ?>"><?php @the_content(); ?></div>
-
-        <?php if ( empty($wp_properties['property_groups']) || $wp_properties['configuration']['property_overview']['sort_stats_by_groups'] != 'true' ) : ?>
-          <ul id="property_stats" class="<?php wpp_css('property::property_stats', "property_stats overview_stats list"); ?>">
-            <?php @draw_stats("display=list&make_link=true"); ?>
-          </ul>
-        <?php else: ?>
-          <?php @draw_stats("display=list&make_link=true"); ?>
-        <?php endif; ?>
-
-        <?php if(!empty($wp_properties['taxonomies'])) foreach($wp_properties['taxonomies'] as $tax_slug => $tax_data): ?>
-          <?php if(get_features("type={$tax_slug}&format=count")):  ?>
-          <div class="<?php echo $tax_slug; ?>_list">
-          <h2><?php echo $tax_data['label']; ?></h2>
-          <ul class="clearfix">
-          <?php get_features("type={$tax_slug}&format=list&links=true"); ?>
-          </ul>
-          </div>
-          <?php endif; ?>
-        <?php endforeach; ?>
-
-        <?php if(is_array($wp_properties['property_meta'])): ?>
-        <?php foreach($wp_properties['property_meta'] as $meta_slug => $meta_title):
-          if(empty($post->$meta_slug) || $meta_slug == 'tagline')
-            continue;
-        ?>
-          <h2><?php echo $meta_title; ?></h2>
-          <p><?php echo  do_shortcode(html_entity_decode($post->$meta_slug)); ?></p>
-        <?php endforeach; ?>
-        <?php endif; ?>
+                        <?php if(is_array($wp_properties['property_meta'])): ?>
+                            <?php foreach($wp_properties['property_meta'] as $meta_slug => $meta_title):
+                              if(empty($post->$meta_slug) || $meta_slug == 'tagline')
+                                continue;
+                            ?>
+                                <h2><?php echo $meta_title; ?></h2>
+                                <p><?php echo  do_shortcode(html_entity_decode($post->$meta_slug)); ?></p>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
 
 
-        <?php if(WPP_F::get_coordinates()): ?>
-          <div id="property_map" class="<?php wpp_css('property::property_map'); ?>" style="width:100%; height:450px"></div>
-        <?php endif; ?>
+                        <?php if(WPP_F::get_coordinates()): ?>
+                            <div id="property_map" class="<?php wpp_css('property::property_map'); ?>" style="width:100%; height:450px"></div>
+                        <?php endif; ?>
 
-        <?php if($post->post_parent): ?>
-          <a href="<?php echo $post->parent_link; ?>" class="<?php wpp_css('btn', "btn btn-return"); ?>"><?php _e('Return to building page.','wpp') ?></a>
-        <?php endif; ?>
+                        <?php if($post->post_parent): ?>
+                            <a href="<?php echo $post->parent_link; ?>" class="<?php wpp_css('btn', "btn btn-return"); ?>"><?php _e('Return to building page.','wpp') ?></a>
+                        <?php endif; ?>
 
-      </div><!-- .entry-content -->
-    </div><!-- #post-## -->
-
-    </div><!-- #content -->
-  </div><!-- #container -->
-<?php
-  // Primary property-type sidebar.
-  if ( is_active_sidebar( "wpp_sidebar_" . $post->property_type ) ) : ?>
-
-    <div id="primary" class="<?php wpp_css('property::primary', "widget-area wpp_sidebar_{$post->property_type}"); ?>" role="complementary">
-      <ul class="xoxo">
-        <?php dynamic_sidebar( "wpp_sidebar_" . $post->property_type ); ?>
-      </ul>
-    </div><!-- #primary .widget-area -->
-
-<?php endif; ?>
+                    </div><!-- .entry-content -->
+                </div><!-- #post-## -->
+            </div><!-- #content -->
+        </div><!-- #container -->
+    </div>
+</div>
 
 <?php get_footer(); ?>
