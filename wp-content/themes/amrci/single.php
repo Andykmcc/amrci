@@ -2,7 +2,7 @@
       
       <div id="content" class="clearfix row">
       
-        <div id="main" class="col-lg-8 col-md-8 col-sm-8 clearfix" role="main">
+        <div id="main" class="col-sm-8 col-md-8 col-lg-8 clearfix" role="main">
 
           <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
           

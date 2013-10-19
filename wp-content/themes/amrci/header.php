@@ -31,12 +31,13 @@
     <!-- end of wordpress head -->
 
     <!-- theme options from options panel -->
-    <?php get_wpbs_theme_options(); ?>
+    <?php# get_wpbs_theme_options(); ?>
 
     <!-- typeahead plugin - if top nav search bar enabled -->
     <?php require_once('library/typeahead.php'); ?>
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">  
-
+    <link href='http://fonts.googleapis.com/css?family=Stint+Ultra+Expanded' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:700,300' rel='stylesheet' type='text/css'>
 </head>
   
 <body <?php body_class(); ?>>
@@ -53,27 +54,13 @@
       }(document, 'script', 'facebook-jssdk'));
     </script>
     <!--end facebook-->  
-    <header role="banner">
-        <div class="container">
-            <div class="row">
-                <div class='col-xs-12 col-sm-3 col-md-3'>
-                    <a class="navbar-brand" id="logo" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>">
-                        <?php if(of_get_option('navbar-branding_logo','')!='') { ?>
-                            <img src="<?php echo of_get_option('navbar-branding_logo'); ?>" alt="<?php echo get_bloginfo('description'); ?>">
-                        <?php }
-                            if(of_get_option('site_name','1')) bloginfo('name'); ?>
-                    </a>
-                </div>
-                <div class='hidden-xs col-sm-9 col-md-9'>
-                    
-                    <img src="<?php bloginfo('template_directory'); ?>/images/header.png" class="img-responsive">
-                    
-                </div>
-            </div>
+    <div class='wrapper container'>
+        <header role="banner">
             <div class='row'>
                 <nav class="navbar navbar-default navbar-static-top" role="navigation">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">                      <span class="icon-bar"></span>
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
@@ -85,6 +72,5 @@
                     </div>
                 </nav> <!-- end .navbar -->
             </div>
-        </div>
-    </header> <!-- end header -->
-    <div class="container">
+        </header> <!-- end header -->
+        

@@ -1,8 +1,28 @@
+html,
 body{
-    background-color: #191856;
+    height: 100%;
+}
+body{
+    background-color: #fff;
+    font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+}
+h1,h2,h3,h4,h5,h6,
+.h1,.h2,.h3,.h4,.h5,.h6{
+    font-family: 'Stint Ultra Expanded',' Roboto Slab', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 h1{
-    color: #191856;
+    color: #063186;
+}
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -91px; /* the bottom margin is the negative value of the footer's height */
+}
+.footer, 
+.push {
+    height: 91px; /* .push must be the same height as .footer */
 }
 .container{
     background-color: #fff;
@@ -10,6 +30,7 @@ h1{
 .navbar-default{
     background-color: #d10010;
     border-bottom: none;
+    font-weight: 700;
 }
 .navbar-default .navbar-nav > li > a {
     color: #fff;
