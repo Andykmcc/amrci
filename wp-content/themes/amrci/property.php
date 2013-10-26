@@ -24,7 +24,15 @@
 
 <?php get_header(); ?>
 <?php the_post(); ?>
-
+<?php if (has_post_thumbnail( $post->ID ) ): ?>
+    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+    <style>
+    body{
+        background-image: url("<?php echo $image[0]; ?>") !important;
+        background-size: cover;
+    }
+    </style>
+<?php endif; ?>
 <script type="text/javascript">
     var map;
     var marker;
@@ -43,9 +51,9 @@
       }
 
       if(typeof google == 'object') {
-        initialize_this_map();
+        // initialize_this_map();
       } else {
-        jQuery("#property_map").hide();
+        // jQuery("#property_map").hide();
       }
 
     });
@@ -84,13 +92,6 @@
     <?php endif; ?>
   }
 </script>
-<?php $background = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); ?>
-    <style>
-        body{
-            background-image: url('<?php echo $background[0]; ?>');
-            background-size: cover;
-        }
-    </style>
 <div class='row'>
     <div class="col-sm-3 col-md-3 col-lg-3">
         <a class="navbar-brand" id="logo" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>">

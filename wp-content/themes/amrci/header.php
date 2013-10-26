@@ -30,9 +30,6 @@
     <?php wp_head(); ?>
     <!-- end of wordpress head -->
 
-    <!-- theme options from options panel -->
-    <?php# get_wpbs_theme_options(); ?>
-
     <!-- typeahead plugin - if top nav search bar enabled -->
     <?php require_once('library/typeahead.php'); ?>
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">  

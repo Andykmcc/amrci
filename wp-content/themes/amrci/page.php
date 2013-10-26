@@ -1,16 +1,18 @@
 <?php get_header(); ?>
 
-<?php $background = get_the_post_thumbnail( $page_id ); ?>
-
-<style>
+<?php if (has_post_thumbnail( $post->ID ) ): ?>
+    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+    <style>
     body{
-        background-image: url('<?php echo $background[0]; ?>');
+        background-image: url("<?php echo $image[0]; ?>") !important;
         background-size: cover;
     }
-</style>
+    </style>
+<?php endif; ?>
+
 <div id="content" class="row">
     <div class="col-sm-3 col-md-3 col-lg-3">
-        <a class="navbar-brand" id="logo" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>">
+        <a title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>">
             <?php if(of_get_option('navbar-branding_logo','')!='') { ?>
                 <img src="<?php echo of_get_option('navbar-branding_logo'); ?>" alt="<?php echo get_bloginfo('description'); ?>">
             <?php }

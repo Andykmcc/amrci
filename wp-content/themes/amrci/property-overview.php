@@ -25,13 +25,10 @@
  * @package WP-Property
 */?>
 <?php
- if ( have_properties() ) {
-
-   $thumbnail_dimentions = WPP_F::get_image_dimensions($wpp_query['thumbnail_size']);
-
+if ( have_properties() ) {
+    $thumbnail_dimentions = WPP_F::get_image_dimensions($wpp_query['thumbnail_size']);
 ?>
 
- 
   <?php foreach ( returned_properties('load_gallery=false') as $property) {  ?>
 
     <div class='row overview-item'>

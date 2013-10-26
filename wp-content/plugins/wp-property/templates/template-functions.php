@@ -183,9 +183,9 @@ if ( !function_exists( 'property_overview_image_MODIFIED' ) ) {
       ob_start();
       ?>
       
-    <a href="<?php echo $thumbnail_link; ?>" title="<?php echo $property[ 'post_title' ] . ( $property[ 'parent_title' ] ? __( ' of ', 'wpp' ) . $property[ 'parent_title' ] : "" ); ?>" class="property-thumbnail-modified" rel="properties">
-      <img width="<?php echo $image[ 'width' ]; ?>" height="<?php echo $image[ 'height' ]; ?>" src="<?php echo $image[ 'link' ]; ?>" alt="<?php echo $property[ 'post_title' ]; ?>" class='img-responsive' />
-    </a>
+    
+    <img width="<?php echo $image[ 'width' ]; ?>" height="<?php echo $image[ 'height' ]; ?>" src="<?php echo $image[ 'link' ]; ?>" alt="<?php echo $property[ 'post_title' ]; ?>" class='img-responsive' />
+    
       
       <?php
       $html = ob_get_contents();
