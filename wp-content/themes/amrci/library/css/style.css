@@ -19,13 +19,14 @@ h1{
     height: auto !important;
     height: 100%;
     margin: 0 auto -91px; /* the bottom margin is the negative value of the footer's height */
+    background-color: rgba(255,255,255,0.9);
 }
 .footer, 
 .push {
     height: 91px; /* .push must be the same height as .footer */
 }
 .container{
-    background-color: rgba(255,255,255,0.9);
+    
 }
 .navbar,
 .navbar-header{
@@ -36,10 +37,10 @@ h1{
     font-weight: 700;
 }
 .navbar-default .navbar-brand{
-    color: #063186;
+    color: #fff;
 }
 .navbar-default .navbar-brand:hover{
-    color: #041f55;
+    color: #333;
 }
 .navbar-default .navbar-toggle{
     border-color: transparent;

@@ -64,7 +64,7 @@
                         </button>
                     </div>
                     <div class="navbar-collapse collapse">
-                        <div class="col-xs-12 col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3 col-lg-9 col-lg-offset-3">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             <?php bones_main_nav(); // Adjust using Menus in Wordpress Admin ?>
                         </div>
                     </div>
