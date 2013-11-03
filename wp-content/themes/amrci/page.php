@@ -13,10 +13,9 @@
 <div id="content" class="row">
     <div class="col-sm-3 col-md-3 col-lg-3">
         <a title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>">
-            <?php if(of_get_option('navbar-branding_logo','')!='') { ?>
-                <img src="<?php echo of_get_option('navbar-branding_logo'); ?>" alt="<?php echo get_bloginfo('description'); ?>">
-            <?php }
-                if(of_get_option('site_name','1')) bloginfo('name'); ?>
+            <?php if(of_get_option('branding_logo','')!='') { ?>
+                <img class='img-responsive hidden-xs' src="<?php echo of_get_option('branding_logo'); ?>" alt="<?php echo get_bloginfo('description'); ?>">
+            <?php } ?>
         </a>
     </div>
 	<div id="main" class="col-sm-8 col-md-8 col-lg-8" role="main">

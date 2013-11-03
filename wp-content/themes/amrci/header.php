@@ -56,6 +56,7 @@
             <div class='row'>
                 <nav class="navbar navbar-default navbar-static-top" role="navigation">
                     <div class="navbar-header">
+                        <a href="<?php echo home_url(); ?>" class='navbar-brand visible-xs'>AMRCI</a>
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
